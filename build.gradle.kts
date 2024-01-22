@@ -26,6 +26,8 @@ repositories {
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
+    testImplementation("io.cucumber:cucumber-java8:6.10.4")
+    testImplementation("io.cucumber:cucumber-junit:6.10.4")
 }
 
 tasks.test {
@@ -33,6 +35,19 @@ tasks.test {
     testLogging {
         events("passed", "skipped", "failed")
         showStandardStreams = true
+        exceptionFormat = TestExceptionFormat.FULL
     }
     outputs.upToDateWhen { false }
+    systemProperty("cucumber.publish.quiet", "true")
+}
+
+tasks.register("cucumber") {
+    dependsOn("test")
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = sourceSets["test"].runtimeClasspath
+            args = listOf("src/test/resources")
+        }
+    }
 }

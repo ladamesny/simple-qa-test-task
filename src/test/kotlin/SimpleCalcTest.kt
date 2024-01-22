@@ -15,6 +15,7 @@ class SimpleCalcTest {
         assertEquals(6.0, SimpleCalc.multiply(2.0, 3.0))
         assertEquals(-6.0, SimpleCalc.multiply(2.0, -3.0))
         assertEquals(0.0, SimpleCalc.multiply(0.0, 0.0))
+        assertEquals(0.0, SimpleCalc.multiply(0.0, 2.0))
     }
 
     @Test
