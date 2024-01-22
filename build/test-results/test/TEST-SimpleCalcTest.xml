@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SimpleCalcTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-01-22T20:04:11" hostname="alienware-m15-R7" time="0.018">
+  <properties/>
+  <testcase name="testSumOfEvens()" classname="SimpleCalcTest" time="0.015"/>
+  <testcase name="testAdd()" classname="SimpleCalcTest" time="0.001"/>
+  <testcase name="testMultiply()" classname="SimpleCalcTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
