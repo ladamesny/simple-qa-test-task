@@ -1,3 +1,4 @@
+@regression @dev @smoke
 Feature: Simple calculator
   Scenario Outline: Adding two numbers
     Given the numbers <number1> and <number2>
@@ -12,6 +13,7 @@ Feature: Simple calculator
       | 0       | -3      | -3       |
       | 5       | -3      | 2        |
 
+  @regression @dev
   Scenario Outline: Multiplying two numbers
     Given the numbers <number1> and <number2>
     When I multiply them
@@ -25,6 +27,7 @@ Feature: Simple calculator
       | 0.0     | -3.0    | 0.0      |
       | 5.0     | -3.0    | -15.0    |
 
+  @regression @smoke
   Scenario Outline: Sum of all even numbers in an array
     Given an array of numbers
       """

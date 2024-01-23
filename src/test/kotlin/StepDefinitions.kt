@@ -10,6 +10,16 @@ class StepDefinitions : En {
     private var intResult: Int = 0
 
     init {
+        Before { scenario ->
+            // This will run before each Scenario
+            println("Starting scenario: ${scenario.name}")
+        }
+
+        After { scenario ->
+            // This will run after each Scenario
+            println("Finished scenario: ${scenario.name}")
+        }
+
         Given("the numbers {double} and {double}") { num1: Double, num2: Double ->
             number1 = num1
             number2 = num2
