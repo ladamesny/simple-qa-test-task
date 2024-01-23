@@ -21,12 +21,16 @@ def run_tests(test_type, reports_dir, logs_dir):
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()
 
-    # Save stdout and stderr to logs
+    # Save stdout and stderr to logs and print them
     timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     with open(os.path.join(logs_dir, f"{test_type}_stdout_{timestamp}.log"), "w") as f:
-        f.write(stdout.decode())
+        stdout_decoded = stdout.decode()
+        print(stdout_decoded)
+        f.write(stdout_decoded)
     with open(os.path.join(logs_dir, f"{test_type}_stderr_{timestamp}.log"), "w") as f:
-        f.write(stderr.decode())
+        stderr_decoded = stderr.decode()
+        print(stderr_decoded)
+        f.write(stderr_decoded)
 
     # Save reports
     report_command = ["cp", "-r", "./build/reports/tests/test", reports_dir]  # replace with your report generation command
