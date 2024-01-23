@@ -1,0 +1,20 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+> Task :compileKotlin UP-TO-DATE
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :compileTestKotlin UP-TO-DATE
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources UP-TO-DATE
+> Task :testClasses UP-TO-DATE
+
+> Task :test
+
+SimpleCalcTest > testSumOfEvens() PASSED
+
+SimpleCalcTest > testAdd() PASSED
+
+SimpleCalcTest > testMultiply() PASSED
+
+BUILD SUCCESSFUL in 3s
+4 actionable tasks: 1 executed, 3 up-to-date
